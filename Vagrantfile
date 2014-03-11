@@ -11,7 +11,7 @@ HERE = File.join(File.dirname(__FILE__))
 
     config.vm.provision :puppet do |puppet|
       puppet.manifests_path = "puppet/manifests"
-      puppet.manifest_file  = "clojure.pp"
+      puppet.manifest_file  = "leiningen.pp"
       puppet.module_path  = "puppet/modules"
     end
   end

@@ -1,2 +1,2 @@
 package { 'curl': ensure => installed }
-include clojure
+include leiningen

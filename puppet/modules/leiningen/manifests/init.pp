@@ -1,4 +1,4 @@
-class clojure {
+class leiningen {
   case $operatingsystem {
     /(Ubuntu|Debian)/: {
       $jreinstaller = 'default-jre'
