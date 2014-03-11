@@ -36,7 +36,7 @@ class leiningen {
     ensure => "directory",
     owner => "vagrant",
     group => "vagrant",
-    require => Exec["retrieve_leiningen"],
+    require => Exec["extract_six_degrees_clj"],
   }
 
 } 
