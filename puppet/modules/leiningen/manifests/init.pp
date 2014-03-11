@@ -22,14 +22,21 @@ class leiningen {
   }
 
   exec{'retrieve_six_degrees_clj':
-    command => "/usr/bin/wget -q https://github.com/paulspencerwilliams/six-degrees-clj/archive/master.tar.gz -O /home/vagrant/six-degrees-clj.tar.gz",
+    command => "/usr/bin/wget -q https://github.com/paulspencerwilliams/six-degrees-clj/archive/demo.tar.gz -O /home/vagrant/six-degrees-clj.tar.gz",
     creates => "/home/vagrant/six-degrees-clj.tar.gz",
   }
 
   exec{'extract_six_degrees_clj':
     command => "/bin/tar -xzf /home/vagrant/six-degrees-clj.tar.gz",
-    creates => "/home/vagrant/six-degrees-clj",
+    creates => "/home/vagrant/six-degrees-clj-demo",
     require => Exec['retrieve_six_degrees_clj'],
   }
- 
+  
+  file{'/home/vagrant/six-degrees-clj-demo':
+    ensure => "directory",
+    owner => "vagrant",
+    group => "vagrant",
+    require => Exec["retrieve_leiningen"],
+  }
+
 } 
