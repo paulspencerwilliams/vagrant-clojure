@@ -1,2 +1,2 @@
-package { 'curl': ensure => installed }
+package { 'wget': ensure => installed }
 include leiningen
