@@ -27,7 +27,7 @@ class leiningen {
   }
 
   exec{'extract_six_degrees_clj':
-    command => "/usr/bin/tar -xzf /home/vagrant/six-degrees-clj.tar.gz",
+    command => "/bin/tar -xzf /home/vagrant/six-degrees-clj.tar.gz",
     creates => "/home/vagrant/six-degrees-clj",
     require => Exec['retrieve_six_degrees_clj'],
   }
